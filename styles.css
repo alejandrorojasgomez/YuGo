@@ -965,13 +965,13 @@ ul { list-style: none; }
 
   /* Hero: mascota grande, iconos pequeños y pegados al borde */
   .hero { padding-block: var(--space-md) var(--space-lg); }
-  .hero-art { max-width: min(420px, 86vw); }
-  .floaty { width: clamp(34px, 10vw, 44px); height: clamp(34px, 10vw, 44px); box-shadow: 0 8px 16px -6px rgba(29,62,116,.3); }
+  .hero-art { width: min(280px, 60vw); max-width: none; }
+  .floaty { width: clamp(30px, 8vw, 38px); height: clamp(30px, 8vw, 38px); box-shadow: 0 8px 16px -6px rgba(29,62,116,.3); }
   .floaty svg { width: 44%; height: 44%; }
-  .floaty.f1 { top: 0; left: 0; }
-  .floaty.f2 { top: 8%; right: 0; }
-  .floaty.f3 { bottom: 16%; left: 0; }
-  .floaty.f4 { bottom: 2%; right: 6%; }
+  .floaty.f1 { top: 2%; left: 2%; }
+  .floaty.f2 { top: 10%; right: 2%; }
+  .floaty.f3 { bottom: 18%; left: 1%; }
+  .floaty.f4 { bottom: 4%; right: 8%; }
   .hero-badges { gap: .7rem 1.1rem; }
 
   /* Productos: una card centrada con flechas, sin salirse */
