@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YüGO+ · Yogures artesanales y caseros, hechos en Cali</title>
+  <meta name="description" content="Yogurt griego, natural con probióticos y stevia, frutos rojos y kumis. Artesanal, sin azúcar añadida y con cosas que sí se pronuncian. Hecho en Cali con amor." />
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" aria-label="YüGO+ inicio">
+        <img src="logo.svg" alt="YüGO+" class="nav-logo" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#products">Productos</a></li>
+        <li><a href="#benefits">Beneficios</a></li>
+        <li><a href="#process">Nuestra magia</a></li>
+        <li><a href="#reviews">Reseñas</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#b2b-contact" class="btn btn-primary" style="padding:.6rem 1.2rem;">Vender YüGO+</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 class="cut">
+          <span class="word" style="--r:-2deg">¡La magia</span>
+          <span class="word accent" style="--r:1.5deg">artesanal</span>
+          <span class="word" style="--r:-1deg">en cada</span>
+          <span class="word accent" style="--r:2deg">cucharada!</span>
+        </h1>
+        <p class="hero-lead">
+          Yogur casero del que no necesita filtro. Leche fresca, fermentación
+          sin afán y cero ingredientes que parezcan contraseña de wifi.
+          Cremosito, honesto y con un <em>plus</em> que se siente desde la
+          primera cucharada.
+        </p>
+        <div class="hero-cta">
+          <a href="#products" class="btn btn-primary btn-pulse">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 1.5.8 2.8 2 3.5V21a2 2 0 0 0 4 0V9.5c1.2-.7 2-2 2-3.5a4 4 0 0 0-4-4Z"/></svg>
+            Quiero mi cucharada
+          </a>
+          <a href="#process" class="btn btn-ghost">Ver el truco (no hay truco)</a>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+            Endulzado con stevia
+          </div>
+          <div class="hero-badge">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg></span>
+            0 azúcar añadida
+          </div>
+          <div class="hero-badge">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></span>
+            Con probióticos
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-blob"></div>
+        <img src="mascota.svg" alt="" class="hero-mascot" />
+        <span class="floaty f1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+        <span class="floaty f2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></svg></span>
+        <span class="floaty f3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></span>
+        <span class="floaty f4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 1.5.8 2.8 2 3.5V21a2 2 0 0 0 4 0V9.5c1.2-.7 2-2 2-3.5a4 4 0 0 0-4-4Z"/></svg></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>SIN AZÚCAR AÑADIDA&nbsp;✦&nbsp;ENDULZADO CON STEVIA&nbsp;✦&nbsp;CON PROBIÓTICOS&nbsp;✦&nbsp;LECHE FRESCA DEL VALLE&nbsp;✦&nbsp;100% ARTESANAL&nbsp;✦&nbsp;INGREDIENTES QUE SÍ RECONOCES&nbsp;✦&nbsp;</span>
+      <span>SIN AZÚCAR AÑADIDA&nbsp;✦&nbsp;ENDULZADO CON STEVIA&nbsp;✦&nbsp;CON PROBIÓTICOS&nbsp;✦&nbsp;LECHE FRESCA DEL VALLE&nbsp;✦&nbsp;100% ARTESANAL&nbsp;✦&nbsp;INGREDIENTES QUE SÍ RECONOCES&nbsp;✦&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ===== PRODUCTOS ===== -->
+  <section class="section" id="products">
+    <div class="wrap center">
+      <span class="eyebrow">Nuestra familia cremosa</span>
+      <h2 class="section-title">Elige tu cucharada favorita</h2>
+      <p class="section-lead">Cuatro recetas, una sola obsesión: que sepa increíble y que tu cuerpo te lo agradezca.</p>
+    </div>
+
+    <!-- Carrusel "fan" de productos (porteado a vanilla JS + GSAP) -->
+    <div class="fan-wrap">
+      <div class="fan-layout" id="fanLayout">
+        <article class="fan-card" data-name="Kumis" data-tag="Clásico" data-price="$16.000"
+          data-desc="El clásico que sabe a casa de la abuela. Cremoso, con esa acidez perfecta que pide otra cucharada… y otra. Fermentado lento, como debe ser.">
+          <div class="fan-card-inner fc-kumis">
+            <img src="natural.png" alt="Kumis YüGO+" />
+            <span class="fc-tag">Clásico</span>
+            <span class="fc-name">Kumis</span>
+          </div>
+        </article>
+
+        <article class="fan-card" data-name="Yogurt Natural" data-tag="El favorito" data-price="$12.000"
+          data-desc="Probióticos y stevia en su forma más honesta. Cremoso, equilibrado y sin azúcar añadida: el que se vuelve costumbre antes de que te des cuenta.">
+          <div class="fan-card-inner fc-natural">
+            <img src="yogurtnatural.png" alt="Yogurt Natural YüGO+" />
+            <span class="fc-tag">El favorito</span>
+            <span class="fc-name">Yogurt Natural</span>
+          </div>
+        </article>
+
+        <article class="fan-card" data-name="Frutos Rojos" data-tag="Edición fruta" data-price="$12.000"
+          data-desc="Misma receta cremosa, ahora con fresa, mora y arándano de verdad. Cero colorante, puro chisme rojo." data-pink="true">
+          <div class="fan-card-inner fc-frutos">
+            <img src="frutosrojos.png" alt="Yogurt de Frutos Rojos YüGO+" />
+            <span class="fc-tag">Edición fruta</span>
+            <span class="fc-name">Frutos Rojos</span>
+          </div>
+        </article>
+
+        <article class="fan-card" data-name="Yogurt Griego" data-tag="Premium" data-price="$16.000"
+          data-desc="Espeso, alto en proteína y con textura de nube firme. El que convierte un desayuno cualquiera en algo que presumes.">
+          <div class="fan-card-inner fc-griego">
+            <img src="natural.png" alt="Yogurt Griego YüGO+" />
+            <span class="fc-tag">Premium</span>
+            <span class="fc-name">Yogurt Griego</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Panel dinámico: se actualiza al pasar por cada producto -->
+    <div class="wrap center">
+      <div class="product-panel" id="productPanel">
+        <span class="pp-tag" id="ppTag">El favorito</span>
+        <h3 class="pp-name" id="ppName">Yogurt Natural</h3>
+        <p class="pp-desc" id="ppDesc">Probióticos y stevia en su forma más honesta. Cremoso, equilibrado y sin azúcar añadida: el que se vuelve costumbre antes de que te des cuenta.</p>
+        <div class="pp-foot">
+          <span class="pp-price" id="ppPrice">$12.000</span>
+          <a href="#b2b-contact" class="btn btn-primary">Lo quiero</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFICIOS ===== -->
+  <section class="section" id="benefits">
+    <div class="wrap center">
+      <span class="eyebrow">Por qué te va a encantar</span>
+      <h2 class="section-title">Bueno por dentro, rico por fuera</h2>
+      <p class="section-lead">Sin letra pequeña ni promesas raras. Solo yogurt bien hecho.</p>
+    </div>
+    <div class="wrap">
+      <div class="display-cards">
+        <article class="dcard dcard-1">
+          <div class="dcard-head">
+            <span class="dcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+            <p class="dcard-title">Dulce sin remordimientos</p>
+          </div>
+          <p class="dcard-desc">Endulzado con stevia y 0 azúcar añadida. Todo el placer, ninguna culpa de las 3 a.m.</p>
+          <p class="dcard-meta">Stevia · 0 azúcar</p>
+        </article>
+
+        <article class="dcard dcard-2">
+          <div class="dcard-head">
+            <span class="dcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></span>
+            <p class="dcard-title">Tu pancita feliz</p>
+          </div>
+          <p class="dcard-desc">Con probióticos que mantienen tu flora en equipo. Spoiler: te mandará una carta de agradecimiento.</p>
+          <p class="dcard-meta">Con probióticos</p>
+        </article>
+
+        <article class="dcard dcard-3">
+          <div class="dcard-head">
+            <span class="dcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+            <p class="dcard-title">Textura de nube</p>
+          </div>
+          <p class="dcard-desc">Cremosidad que se siente desde la primera cucharada. Sin gelatinas, sin espesantes, sin trampa.</p>
+          <p class="dcard-meta">100% cremoso</p>
+        </article>
+
+        <article class="dcard dcard-4">
+          <div class="dcard-head">
+            <span class="dcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+            <p class="dcard-title">Sin cosas impronunciables</p>
+          </div>
+          <p class="dcard-desc">Si no lo puedes leer en voz alta sin trabarte, no entra. Ingredientes que ya tienes en tu cocina.</p>
+          <p class="dcard-meta">Hecho con amor</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEÑAS ===== -->
+  <section class="section" id="reviews">
+    <div class="wrap center">
+      <span class="eyebrow">La gente habla</span>
+      <h2 class="section-title">Cucharadas con testigos</h2>
+      <p class="section-lead">No lo decimos solo nosotros (aunque también). Lo dice quien ya cayó y no piensa volver al yogur de supermercado.</p>
+    </div>
+    <div class="stagger" id="staggerTestimonials" aria-label="Testimonios de clientes"></div>
+    <div class="st-nav">
+      <button class="st-btn" id="stPrev" aria-label="Testimonio anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="st-btn" id="stNext" aria-label="Siguiente testimonio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== PROCESO ===== -->
+  <section class="section" id="process">
+    <div class="wrap center">
+      <span class="eyebrow">Nuestra magia</span>
+      <h2 class="section-title">Tres pasos, cero atajos</h2>
+      <p class="section-lead">Nada de polvos mágicos ni laboratorios secretos. Solo tiempo, leche buena y manos que saben lo que hacen.</p>
+    </div>
+    <div class="wrap">
+      <div class="timeline">
+        <div class="step reveal">
+          <span class="num">PASO 01</span>
+          <h4>Leche fresca <svg class="ico-inline" style="color:var(--primary-orange)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg></h4>
+          <p>Empezamos con leche fresca de la región, sin atajos ni reconstituidos. Si la base no es buena, no hay magia que valga.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">PASO 02</span>
+          <h4>Fermentación paciente <svg class="ico-inline" style="color:var(--primary-orange)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></h4>
+          <p>Dejamos que los cultivos hagan lo suyo a su propio ritmo, sin apurarlos. La paciencia es el ingrediente secreto que ninguna máquina sabe imitar.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">PASO 03</span>
+          <h4>Directo a tu nevera <svg class="ico-inline" style="color:var(--primary-orange)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 12 10 0 10 0"/><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/><path d="m9 4 3-2 3 2"/><path d="m9 20 3 2 3-2"/><path d="m20 9 2 3-2 3"/><path d="m4 9-2 3 2 3"/></svg></h4>
+          <p>Envasamos fresquito y te lo llevamos volando. Del cultivo a tu cuchara con el mínimo recorrido y, modestia aparte, el máximo sabor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="wrap center">
+      <span class="eyebrow">Preguntas & PQRS</span>
+      <h2 class="section-title">Lo que todos preguntan</h2>
+      <p class="section-lead">¿Te quedó una duda dando vueltas? Escríbenos por WhatsApp, respondemos más rápido de lo que tardas en abrir la nevera.</p>
+    </div>
+    <div class="wrap">
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿De verdad, de verdad no tiene azúcar añadida? <span class="chev">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">De verdad de verdad. Endulzamos con stevia y dejamos que la fruta y la leche pongan su dulzor natural. Cero azúcar añadida, sin asteriscos ni letra chiquita. Palabra de YüGO+.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cuánto dura en la nevera? <span class="chev">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Al ser artesanal y sin conservantes raros, recomendamos consumirlo dentro de los días indicados en la tapa. Mantenlo siempre refrigerado para conservar su cremosidad.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Hacen domicilios en Cali? <span class="chev">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">¡Claro que sí! Entregamos en Cali fresquito y a tiempo, nada de yogur con jet lag. Escríbenos por WhatsApp con tu zona y coordinamos la entrega.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Sirve para personas con diabetes? <span class="chev">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Nuestros yogures son endulzados con stevia y sin azúcar añadida, una opción amable para quienes cuidan su consumo de azúcar. Aun así, te recomendamos consultar con tu médico según tu caso.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Quiero venderlo en mi negocio, ¿se puede? <span class="chev">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">¿Que si se puede? Nos haces el día. Tenemos precios y condiciones especiales para mayoristas, cafeterías y tiendas. Llena el formulario de aliados aquí abajo o escríbenos directo y hacemos equipo.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== B2B ===== -->
+  <section class="section" id="b2b-contact">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Para negocios & mayoristas</span>
+        <h2 class="section-title">Lleva YüGO+ a tu mostrador</h2>
+        <p class="section-lead">Cafeterías, tiendas saludables, restaurantes y distribuidores: pongámonos serios… del lado rico. Producto artesanal que se vende solo (casi).</p>
+      </div>
+
+      <div class="b2b-grid">
+        <div class="b2b-perks">
+          <div class="b2b-perk">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+            <div><h4>Precios mayoristas</h4><p>Márgenes pensados para que ganes vendiendo algo que el cliente vuelve a pedir solito.</p></div>
+          </div>
+          <div class="b2b-perk">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
+            <div><h4>Entregas frescas en Cali</h4><p>Logística local, producto siempre fresco y a tiempo en tu punto.</p></div>
+          </div>
+          <div class="b2b-perk">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
+            <div><h4>Acompañamiento real</h4><p>Material de marca y soporte para que vender YüGO+ sea facilísimo.</p></div>
+          </div>
+        </div>
+
+        <form class="form" id="b2bForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+            </div>
+            <div class="field">
+              <label for="f-empresa">Empresa</label>
+              <input id="f-empresa" name="empresa" type="text" placeholder="Nombre del negocio" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" placeholder="tucorreo@email.com" required />
+            </div>
+            <div class="field">
+              <label for="f-tipo">Tipo de solicitud</label>
+              <select id="f-tipo" name="tipo" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option>Quiero ser punto de venta</option>
+                <option>Distribución mayorista</option>
+                <option>Cafetería / Restaurante</option>
+                <option>Pedido grande para evento</option>
+                <option>Otra cosa</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg">Cuéntanos más</label>
+            <textarea id="f-msg" name="mensaje" placeholder="¿Qué tienes en mente? Volumen aproximado, zona, frecuencia…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Enviar solicitud
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <p class="form-note">También puedes escribirnos a <a href="mailto:Yugo@gmail.com" style="color:var(--primary-orange);font-weight:600;">Yugo@gmail.com</a> o por <a href="https://wa.me/573002149992" target="_blank" rel="noopener" style="color:var(--primary-orange);font-weight:600;">WhatsApp</a>.</p>
+          <div class="form-ok" id="formOk">¡Listo! Tu solicitud quedó anotada. Te contactamos muy pronto (psst: esto es una demo, todavía no se envía nada de verdad).</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="logo_2.svg" alt="YüGO+" />
+          <p>Yogur artesanal y casero, hecho en Cali con leche fresca, mucha paciencia y cero cosas raras. Cuchara no incluida (pero la vas a necesitar).</p>
+        </div>
+        <div class="footer-col">
+          <h5>Productos</h5>
+          <a href="#products">Yogurt Griego</a>
+          <a href="#products">Yogurt Natural</a>
+          <a href="#products">Frutos Rojos</a>
+          <a href="#products">Kumis</a>
+        </div>
+        <div class="footer-col">
+          <h5>Explora</h5>
+          <a href="#benefits">Beneficios</a>
+          <a href="#process">Nuestra magia</a>
+          <a href="#reviews">Reseñas</a>
+          <a href="#faq">Preguntas frecuentes</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <a href="https://wa.me/573002149992" target="_blank" rel="noopener">WhatsApp: 300 214 9992</a>
+          <a href="mailto:Yugo@gmail.com">Yugo@gmail.com</a>
+          <a href="#b2b-contact">Vender YüGO+</a>
+          <a href="#top">Cali, Colombia</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 YüGO+ · Hecho a mano en Cali con <svg class="ico-heart" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.34-1.48z"/></svg></a>
+          <a href="https://wa.me/573002149992" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.6 6.32A8.78 8.78 0 0 0 12 4a8.74 8.74 0 0 0-7.6 13.1L4 20l3-0.78a8.72 8.72 0 0 0 4.99 1.56h.01c4.82 0 8.74-3.92 8.74-8.74a8.7 8.7 0 0 0-3.14-6.72zM12 19.36c-1.5 0-2.96-.4-4.24-1.16l-.3-.18-1.76.46.47-1.72-.2-.32A7.26 7.26 0 0 1 4.74 12 7.27 7.27 0 0 1 12 4.74 7.27 7.27 0 0 1 19.26 12 7.27 7.27 0 0 1 12 19.36zm4.18-5.43c-.23-.11-1.35-.67-1.56-.74-.21-.08-.36-.11-.51.11-.15.23-.59.74-.72.89-.13.15-.27.17-.5.06-.23-.11-.96-.35-1.83-1.13-.68-.6-1.13-1.35-1.27-1.58-.13-.23-.01-.35.1-.46.1-.1.23-.27.34-.4.11-.13.15-.23.23-.38.08-.15.04-.29-.02-.4-.06-.11-.51-1.23-.7-1.69-.18-.44-.37-.38-.51-.39-.13 0-.29-.01-.44-.01s-.4.06-.61.29c-.21.23-.8.78-.8 1.9 0 1.12.82 2.2.93 2.35.11.15 1.6 2.45 3.88 3.43.54.23.96.37 1.29.48.54.17 1.04.15 1.43.09.44-.07 1.35-.55 1.54-1.08.19-.53.19-.99.13-1.08-.06-.09-.21-.15-.44-.26z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="fan.js"></script>
+  <script src="stagger.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
