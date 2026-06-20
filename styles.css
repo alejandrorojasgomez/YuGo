@@ -10,6 +10,7 @@
   --primary-orange:    #ebb163;
   --background-cream:  #f4ece2;
   --hover-pink:        #fce8e6;
+  --hover-blue:        #e6eef9;
 
   /* Derivados */
   --blue-deep:    #16305b;
@@ -217,13 +218,14 @@ ul { list-style: none; }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.3rem, 5.4vw, 4.1rem);
-  line-height: .92;
-  letter-spacing: -1px;
+  font-size: clamp(2.15rem, 5vw, 3.9rem);
+  line-height: 1.28;
+  letter-spacing: 0;
+  word-spacing: .02em;
   color: var(--primary-blue);
   margin-bottom: 1.8rem;
 }
-.hero h1 .word { display: inline-block; margin-right: .04em; }
+.hero h1 .word { display: inline-block; margin: 0 .08em 0 0; vertical-align: top; }
 .hero h1 .accent { color: var(--primary-orange); }
 
 .hero-lead {
@@ -431,6 +433,21 @@ ul { list-style: none; }
   color: rgba(29,62,116,.55);
 }
 
+/* Flechas de navegación (solo móvil) */
+.fan-nav { display: none; justify-content: center; gap: 1.4rem; margin-top: 1.4rem; }
+.fan-arrow {
+  width: 50px; height: 50px; border-radius: var(--radius-full);
+  border: 2.5px solid var(--primary-blue);
+  background: #fff; color: var(--primary-blue);
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.fan-arrow svg { width: 22px; height: 22px; }
+.fan-arrow:hover { background: var(--primary-blue); color: var(--background-cream); }
+.fan-arrow:active { transform: scale(.9); }
+@media (max-width: 767px) { .fan-nav { display: flex; } }
+
 /* ---------- 7b. SHOWCASE LEGACY (cards antiguas, sin uso) ---------- */
 
 .cards {
@@ -538,18 +555,33 @@ ul { list-style: none; }
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
+  gap: 2.6rem;
   margin-top: var(--space-lg);
+  max-width: 1320px;
+  margin-inline: auto;
 }
 .benefit {
   background: var(--cream-card);
   border-radius: var(--radius-lg);
-  padding: 2.2rem;
-  display: flex; gap: 1.3rem; align-items: flex-start;
+  padding: 2.6rem 2.8rem;
+  display: flex; gap: 1.5rem; align-items: flex-start;
   border: 2px solid rgba(29,62,116,.06);
-  transition: transform .3s ease, background .3s ease;
+  transition: transform .45s cubic-bezier(.22,1,.36,1),
+              background .45s ease, filter .45s ease, opacity .45s ease, box-shadow .45s ease;
 }
-.benefit:hover { transform: translateY(-6px); background: #fff; }
+.benefit:hover {
+  transform: translateY(-8px) scale(1.015);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+/* Al pasar por una, las demás se difuminan */
+.benefits-grid:hover .benefit:not(:hover) {
+  filter: blur(3px);
+  opacity: .5;
+  transform: scale(.985);
+}
+.benefit > div { min-width: 0; }
+.benefit h4 { overflow-wrap: anywhere; }
 .benefit-ico {
   flex: 0 0 64px; height: 64px; width: 64px;
   border-radius: var(--radius-full);
@@ -566,8 +598,8 @@ ul { list-style: none; }
   grid-template-areas: "stack";
   place-items: center;
   margin: calc(var(--space-lg) + 1rem) auto var(--space-md);
-  width: min(34rem, 100%);
-  min-height: 22rem;
+  width: min(46rem, 100%);
+  min-height: 25rem;
 }
 .dcard {
   grid-area: stack;
@@ -610,10 +642,10 @@ ul { list-style: none; }
 .dcard-meta { font-size: .78rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--primary-orange); }
 
 /* posiciones apiladas (skew + offset escalonado, centrado) */
-.dcard-1 { transform: skewY(-8deg) translate(-6.75rem, -3.75rem); z-index: 4; }
-.dcard-2 { transform: skewY(-8deg) translate(-2.25rem, -1.25rem); z-index: 3; }
-.dcard-3 { transform: skewY(-8deg) translate(2.25rem, 1.25rem); z-index: 2; }
-.dcard-4 { transform: skewY(-8deg) translate(6.75rem, 3.75rem); z-index: 1; }
+.dcard-1 { transform: skewY(-8deg) translate(-9.75rem, -4.5rem); z-index: 4; }
+.dcard-2 { transform: skewY(-8deg) translate(-3.25rem, -1.5rem); z-index: 3; }
+.dcard-3 { transform: skewY(-8deg) translate(3.25rem, 1.5rem); z-index: 2; }
+.dcard-4 { transform: skewY(-8deg) translate(9.75rem, 4.5rem); z-index: 1; }
 
 /* hover: sube, recupera color y oculta el velo */
 .dcard:hover {
@@ -623,22 +655,31 @@ ul { list-style: none; }
   z-index: 20;
 }
 .dcard:hover::after { opacity: 0; }
-.dcard-1:hover { transform: skewY(-8deg) translate(-6.75rem, -6.75rem); }
-.dcard-2:hover { transform: skewY(-8deg) translate(-2.25rem, -4.25rem); }
-.dcard-3:hover { transform: skewY(-8deg) translate(2.25rem, -1.75rem); }
-.dcard-4:hover { transform: skewY(-8deg) translate(6.75rem, 0.75rem); }
+.dcard-1:hover { transform: skewY(-8deg) translate(-9.75rem, -7.5rem); }
+.dcard-2:hover { transform: skewY(-8deg) translate(-3.25rem, -4.5rem); }
+.dcard-3:hover { transform: skewY(-8deg) translate(3.25rem, -1.75rem); }
+.dcard-4:hover { transform: skewY(-8deg) translate(9.75rem, 0.5rem); }
+/* al pasar por una, las demás se difuminan */
+.display-cards:hover .dcard:not(:hover) { filter: grayscale(1) blur(3px); opacity: .58; }
 
 @media (max-width: 760px) {
-  .display-cards { width: 100%; min-height: 20rem; }
-  .dcard { width: 18rem; height: 9.4rem; }
-  .dcard-1 { transform: skewY(-8deg) translate(-3.75rem, -3.3rem); }
-  .dcard-2 { transform: skewY(-8deg) translate(-1.25rem, -1.1rem); }
-  .dcard-3 { transform: skewY(-8deg) translate(1.25rem, 1.1rem); }
-  .dcard-4 { transform: skewY(-8deg) translate(3.75rem, 3.3rem); }
-  .dcard-1:hover { transform: skewY(-8deg) translate(-3.75rem, -5.7rem); }
-  .dcard-2:hover { transform: skewY(-8deg) translate(-1.25rem, -3.5rem); }
-  .dcard-3:hover { transform: skewY(-8deg) translate(1.25rem, -1.3rem); }
-  .dcard-4:hover { transform: skewY(-8deg) translate(3.75rem, 0.9rem); }
+  /* En móvil no hay hover: el deck pasa a lista vertical, todo visible y legible */
+  .display-cards {
+    display: flex; flex-direction: column; gap: 1rem;
+    width: 100%; min-height: 0;
+    grid-template-areas: none;
+    margin: var(--space-md) auto 0;
+  }
+  .dcard {
+    grid-area: auto;
+    width: 100%; max-width: none; height: auto;
+    transform: none !important;
+    filter: none !important;
+    border-color: rgba(235,177,99,.55);
+  }
+  .dcard::after { display: none; }
+  .dcard:hover { box-shadow: var(--shadow-soft); }
+  .dcard-desc { font-size: .96rem; }
 }
 
 /* ---------- 9. RESEÑAS (FORMATO 2, stagger) ---------- */
@@ -919,10 +960,36 @@ ul { list-style: none; }
   .nav-links a { padding: .9rem 0; width: 100%; border-bottom: 1px solid rgba(29,62,116,.08); }
   .nav-links .btn { margin-top: .8rem; }
   .nav-toggle { display: block; }
-  .benefits-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .card { width: 100%; max-width: 360px; }
   .footer-top { flex-direction: column; }
+
+  /* Hero: mascota grande, iconos pequeños y pegados al borde */
+  .hero { padding-block: var(--space-md) var(--space-lg); }
+  .hero-art { max-width: min(420px, 86vw); }
+  .floaty { width: clamp(34px, 10vw, 44px); height: clamp(34px, 10vw, 44px); box-shadow: 0 8px 16px -6px rgba(29,62,116,.3); }
+  .floaty svg { width: 44%; height: 44%; }
+  .floaty.f1 { top: 0; left: 0; }
+  .floaty.f2 { top: 8%; right: 0; }
+  .floaty.f3 { bottom: 16%; left: 0; }
+  .floaty.f4 { bottom: 2%; right: 6%; }
+  .hero-badges { gap: .7rem 1.1rem; }
+
+  /* Productos: una card centrada con flechas, sin salirse */
+  .fan-wrap { padding-top: var(--space-sm); }
+  .fan-layout { height: clamp(400px, 104vw, 440px); }
+  .fan-card { width: min(256px, 70vw); }
+  .product-panel { margin-top: var(--space-sm); }
+
+  .section-lead { font-size: 1rem; }
+}
+
+/* Reseñas en móvil: card al alto del contenido (no cuadrado gigante) */
+@media (max-width: 639px) {
+  .stagger { height: clamp(380px, 96vw, 460px); }
+  .st-card { height: auto !important; min-height: 17rem; padding: 1.5rem 1.4rem; }
+  .st-quote { font-size: .96rem; }
+  .st-by { font-size: .8rem; }
+  .st-avatar { width: 46px; height: 50px; font-size: 1.15rem; margin-bottom: .9rem; }
 }
 
 /* ---------- 16. ACCESIBILIDAD ---------- */

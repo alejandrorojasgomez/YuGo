@@ -98,10 +98,11 @@
       if (hi !== null) {
         if (i === hi) {
           y -= 2.4;
-          scale *= 1.1;
+          scale *= 1.12;
         } else {
           const dist = Math.abs(i - hi);
           const push = (2.6 * mult()) / dist;
+          scale *= 0.9;                       // resto encoge → resalta el activo
           if (i < hi) { x -= push; rot -= 2 / dist; }
           else        { x += push; rot += 2 / dist; }
         }
@@ -136,58 +137,90 @@
     }, 140);
   }
 
-  function pink(i) {
-    section.style.backgroundColor = cards[i].dataset.pink ? 'var(--hover-pink)' : '';
+  function tint(i) {
+    section.style.backgroundColor = cards[i].dataset.pink ? 'var(--hover-pink)' : 'var(--hover-blue)';
   }
 
   // Índice de la card destacada por defecto (Yogurt Natural)
   let featured = cards.findIndex((c) => c.dataset.name === 'Yogurt Natural');
   if (featured < 0) featured = Math.round(center);
 
-  /* ---- Eventos de hover por carta ---- */
+  /* ---- Modo móvil: una carta a la vez con flechas ---- */
+  const mq = window.matchMedia('(max-width: 767px)');
+  let isMobile = mq.matches;
+  let activeIndex = featured;                // arranca en "El favorito"
+  const prevBtn = document.getElementById('fanPrev');
+  const nextBtn = document.getElementById('fanNext');
+
+  function showMobile(idx, animate) {
+    cards.forEach((c, i) => {
+      const on = i === idx;
+      gsap.to(c, {
+        x: 0, y: 0, rotation: 0, scale: on ? 1 : 0.86, opacity: on ? 1 : 0,
+        duration: animate ? 0.4 : 0, ease: 'power3.out', overwrite: 'auto',
+      });
+      gsap.set(c, { zIndex: on ? 10 : 1 });
+    });
+    updatePanel(idx);
+  }
+
+  function go(step) {
+    activeIndex = (activeIndex + step + n) % n;
+    showMobile(activeIndex, true);
+  }
+  if (prevBtn) prevBtn.addEventListener('click', () => go(-1));
+  if (nextBtn) nextBtn.addEventListener('click', () => go(1));
+
+  // En móvil no esperamos al IntersectionObserver: mostramos ya la card
+  // destacada para que la sección nunca aparezca vacía.
+  if (isMobile) showMobile(activeIndex, false);
+
+  /* ---- Eventos de hover por carta (solo desktop) ---- */
   cards.forEach((c, i) => {
     c.addEventListener('mouseenter', () => {
-      if (!entered) return;
+      if (!entered || isMobile) return;
       active = i;
       hover(i);
       updatePanel(i);
-      pink(i);
+      tint(i);
     });
   });
   layout.addEventListener('mouseleave', () => {
-    if (!entered) return;
+    if (!entered || isMobile) return;
     active = null;
     hover(null);
     section.style.backgroundColor = '';
-    updatePanel(featured);                    // el panel vuelve a Yogurt Natural
-  });
-
-  // Soporte táctil: tap para enfocar una carta
-  cards.forEach((c, i) => {
-    c.addEventListener('click', () => {
-      if (!entered) return;
-      active = i;
-      hover(i);
-      updatePanel(i);
-      pink(i);
-    });
+    updatePanel(featured);                   // el panel vuelve a Yogurt Natural
   });
 
   /* ---- Entrada al hacer scroll ---- */
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
-        entry();
+        if (isMobile) { showMobile(activeIndex, true); entered = true; }
+        else { entry(); }
         io.disconnect();
       }
     });
   }, { threshold: 0.3 });
   io.observe(layout);
 
-  /* ---- Resize ---- */
+  /* ---- Resize / cambio de modo ---- */
   let rt;
   window.addEventListener('resize', () => {
     clearTimeout(rt);
-    rt = setTimeout(() => { if (entered) (active === null ? rest(false) : hover(active)); }, 120);
+    rt = setTimeout(() => {
+      const nowMobile = mq.matches;
+      if (nowMobile !== isMobile) {
+        isMobile = nowMobile;
+        section.style.backgroundColor = '';
+        active = null;
+        if (isMobile) showMobile(activeIndex, false);
+        else rest(false);
+      } else if (entered) {
+        if (isMobile) showMobile(activeIndex, false);
+        else (active === null ? rest(false) : hover(active));
+      }
+    }, 140);
   }, { passive: true });
 })();
