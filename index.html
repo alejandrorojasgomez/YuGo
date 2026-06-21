@@ -317,7 +317,11 @@
           </div>
         </div>
 
-        <form class="form" id="b2bForm" novalidate>
+        <form class="form" id="b2bForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="ced81a23-3773-4094-902e-b5144c88a913" />
+          <input type="hidden" name="subject" value="Nueva solicitud B2B · YüGO+" />
+          <input type="hidden" name="from_name" value="Landing YüGO+" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-row">
             <div class="field">
               <label for="f-nombre">Nombre</label>
@@ -354,7 +358,7 @@
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
           <p class="form-note">También puedes escribirnos a <a href="mailto:Yugo@gmail.com" style="color:var(--primary-orange);font-weight:600;">Yugo@gmail.com</a> o por <a href="https://wa.me/573002149992" target="_blank" rel="noopener" style="color:var(--primary-orange);font-weight:600;">WhatsApp</a>.</p>
-          <div class="form-ok" id="formOk">¡Listo! Tu solicitud quedó anotada. Te contactamos muy pronto (psst: esto es una demo, todavía no se envía nada de verdad).</div>
+          <div class="form-ok" id="formOk">¡Listo! Tu solicitud quedó enviada. Te contactamos muy pronto.</div>
         </form>
       </div>
     </div>

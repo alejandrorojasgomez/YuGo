@@ -64,13 +64,40 @@
   const form = document.getElementById('b2bForm');
   const ok = document.getElementById('formOk');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    const btn = form.querySelector('button[type="submit"]');
+    const btnText = btn ? btn.innerHTML : '';
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      ok.classList.add('show');
-      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      form.reset();
-      setTimeout(() => ok.classList.remove('show'), 6000);
+
+      if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          ok.textContent = '¡Listo! Tu solicitud quedó enviada. Te contactamos muy pronto.';
+          ok.style.color = '';
+          ok.classList.add('show');
+          ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          form.reset();
+          setTimeout(() => ok.classList.remove('show'), 6000);
+        } else {
+          throw new Error(data.message || 'Error al enviar');
+        }
+      } catch (err) {
+        ok.textContent = 'Uy, no se pudo enviar. Inténtalo de nuevo o escríbenos por WhatsApp.';
+        ok.style.color = '#ffd9d3';
+        ok.classList.add('show');
+      } finally {
+        if (btn) { btn.disabled = false; btn.innerHTML = btnText; }
+      }
     });
   }
 
